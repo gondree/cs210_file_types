@@ -1,0 +1,1 @@
+\mathbf{\mathsf{NP}} \subseteq \mathbf{\mathsf{BPP}} \Rightarrow \mathbf{\mathsf{RP}} = \mathbf{\mathsf{NP}}

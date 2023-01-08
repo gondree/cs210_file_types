@@ -1,0 +1,98 @@
+\usepackage[pdftex]{graphicx,color}
+\usepackage{subfigure}
+\usepackage{epstopdf}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\usepackage{multicol}
+\usepackage{setspace} %for double, 1.5, single spacing etc.
+\usepackage{xspace}
+\usepackage{aeguill}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{times}
+
+\DeclareGraphicsRule{.pdftex}{pdf}{.pdftex}{} % required for combined latex/pdf xfig figures
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+%%%%%%%% BEGIN Editing MACROS %%%%%%%%
+
+% Editing Macros
+\newcounter{todo}\setcounter{todo}{0}
+\newcommand{\todo}[1]{{\em {\bf TODO \addtocounter{todo}{1}\thetodo:} #1}} 
+
+%changeable conventions in text
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\deletia}{\ldots [deletia] \ldots}
+\newcommand{\snip}{\ldots \<snip\>\ldots}
+
+%%%%%%%% End Editing MACROS %%%%%%%%
+%%%%%%%% BEGIN Technical MACROS %%%%%%%%
+
+%custom theorem environments, based on amsthm
+
+\theoremstyle{definition} %plain, definition, remark  (from amsthm package)
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem*{notation}{Notation}
+\newtheorem{claim}{Claim}
+\newtheorem*{remark}{Remark}
+
+%general
+\newcommand{\st}{ \ | \ }                       % shortcut for set-builder notation
+\newcommand{\event}[1]{\mathbf{#1}}             % for probabilities, an event
+\newcommand{\xor}{\oplus}
+
+%complexity theory
+\newcommand{\Class}[1]{\mathbf{\mathsf{#1}}}    	% use like "\Class(NSPACE}(n)" or "\Class(TM) \ M"
+\newcommand{\Problem}[1]{\textrm{\textsc{#1}}}
+
+%families, distributions, selection from distribution, etc
+\newcommand{\Funfam}[1]{\mathsf{#1}}           % for a family of functions
+\newcommand{\Perm}[1]{\Funfam{Perm}({#1})}
+\newcommand{\Rand}[2]{\Funfam{Rand}(#1)}
+\newcommand{\Randd}[2]{\Funfam{Rand}(#1,#2)}
+\newcommand{\getsr}{{\:\stackrel{{\scriptscriptstyle\hspace{0.2em}\$}}{\leftarrow}\:}}
+
+%encryption scheme, etc
+\newcommand{\calK}{\mathcal{K}}     % key extraction algorithm
+\newcommand{\calE}{\mathcal{E}}     % encryption algorithm
+\newcommand{\calD}{\mathcal{D}}     % decryption algorithm
+\newcommand{\calV}{\mathcal{V}}	%message authentication verifier
+\newcommand{\calT}{\mathcal{T}} 	%message authentication tag generator
+
+%experiment notation
+\newcommand{\Prob}[1]{\Pr \left[ #1 \right]}
+\newcommand{\ProvOver}[2]{\Pr_{#1} \left[ #2 \right]}
+\newcommand{\Adv}{{\mathbf{Adv}}}
+\newcommand{\Exp}{{\mathbf{Exp}}}
+\newcommand{\prp}{{\mathrm{prp}}}
+\newcommand{\outputs}{{\Rightarrow}}
+\newcommand{\andthen}{{\::\;\;}}
+
+%game notation
+\definecolor{GameHighlight1}{gray}{.85}
+\newcommand{\afterbad}[1]{\colorbox{GameHighlight1}{$#1$}}
+
+%common pseudocode
+\newcommand{\codestyle}[1]{\textbf{#1}\;\;}
+\newcommand{\cif}{\codestyle{if}}
+\newcommand{\cthen}{\codestyle{then}}
+\newcommand{\celse}{\codestyle{else}}
+\newcommand{\celseif}{\codestyle{else if}}
+\newcommand{\cdo}{\codestyle{do}}
+\newcommand{\cfor}{\codestyle{for}}
+\newcommand{\creturn}{\codestyle{return}}
+
+
+%%%%%%%% END MACROS %%%%%%%%
